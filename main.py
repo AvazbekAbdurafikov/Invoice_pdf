@@ -24,7 +24,7 @@ for filepath in filepaths:
     columns_a = df.columns
 
     columns_a = [item.replace("_", " ").title() for item in columns_a]
-    pdf.set_font(family="Times", size=10,style="B")
+    pdf.set_font(family="Times", size=10, style="B")
     pdf.set_text_color(80, 80, 80)
     pdf.cell(w=30, h=8, txt=columns_a[0], border=1)
     pdf.cell(w=60, h=8, txt=columns_a[1], border=1)
@@ -44,15 +44,15 @@ for filepath in filepaths:
     total_sum = df["total_price"].sum()
     pdf.cell(w=30, h=8, txt=" ", border=1)
     pdf.cell(w=60, h=8, txt=" ", border=1)
-    pdf.cell(w=40, h=8, txt=" " , border=1)
-    pdf.cell(w=30, h=8, txt=" " , border=1)
+    pdf.cell(w=40, h=8, txt=" ", border=1)
+    pdf.cell(w=30, h=8, txt=" ", border=1)
     pdf.cell(w=30, h=8, txt=str(total_sum), ln=1, border=1)
 
-    pdf.set_font(family="Times", size=10,style='B')
-    pdf.cell(w=30, h=8, txt=f"The total price is ${total_sum:}",ln=1)
+    pdf.set_font(family="Times", size=10, style='B')
+    pdf.cell(w=30, h=8, txt=f"The total price is ${total_sum:}", ln=1)
 
-    pdf.set_font(family="Times", size=14,style="B")
+    pdf.set_font(family="Times", size=14, style="B")
     pdf.cell(w=25, h=8, txt="PythonHow")
-    pdf.image("pythonhow.png",w=10)
+    pdf.image("pythonhow.png", w=10)
 
     pdf.output(f"PDFs/{filename}.pdf")
